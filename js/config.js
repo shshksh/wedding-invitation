@@ -1,7 +1,7 @@
 /* ===== 청첩장 정보: 이 파일만 수정하면 됩니다 ===== */
 const C={
-  groom:{name:'김성환',fam:'김동만 · 임행숙의 차남',tel:'010-7179-8071',photo:'images/groom.jpg'},
-  bride:{name:'박소현',fam:'박영진 · 강희주의 장녀',tel:'010-2322-9570',photo:'images/bride.jpg'},
+  groom:{name:'김성환',fam:'김동만 · 임행숙의 차남',tel:'010-7179-8071',photos:['images/groom-1.jpg','images/groom-2.jpg']},
+  bride:{name:'박소현',fam:'박영진 · 강희주의 장녀',tel:'010-2322-9570',photos:['images/bride-1.jpg','images/bride-2.jpg']},
   date:'2027-02-13T14:50',                 // 예식 일시 (YYYY-MM-DDTHH:MM)
   venue:{name:'더 뉴 컨벤션 5F 제니스홀',addr:'서울 강서구 공항대로36길 57',addr2:'(지번) 서울 강서구 내발산동 655'},
   links:{naver:'https://naver.me/5UEc8GRX',kakao:'https://place.map.kakao.com/26314220'},

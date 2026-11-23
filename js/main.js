@@ -5,8 +5,9 @@ const ds=`${Y}년 ${M+1}월 ${D.getDate()}일`,ts=`${h<12?'오전':'오후'} ${h
 C.dt={short:`${ds} ${ts}`,long:`${ds} ${WD[D.getDay()]}요일 ${ts}`,vol:`VOL. ${String(Y).slice(2)} — NO. ${p2(M+1)}`,code:`${String(Y).slice(2)} ${p2(M+1)} ${p2(D.getDate())}`,ym:`${Y}. ${p2(M+1)}`};
 $$('[data-t]').forEach(e=>e.textContent=e.dataset.t.split('.').reduce((o,k)=>o[k],C));
 if(C.hero)$('.hero').style.setProperty('--photo',`url('${new URL(C.hero,location.href).href}')`);
-if(C.map){const m=$('.map');m.style.background=`url('${C.map}') center/cover`;m.innerHTML=''}
-$$('.pp').forEach((e,i)=>{const u=[C.groom,C.bride][i].photo;if(u)e.style.background=`url('${u}') center/cover`});
+if(C.map){const m=$('.map');m.style.background=`url('${C.map}') center/cover`;m.innerHTML='';m.classList.add('zm');m.onclick=()=>zoom(C.map)}
+$$('.pp').forEach((e,i)=>{const ps=[C.groom,C.bride][i].photos||[];e.innerHTML=ps.slice(0,2).map((u,j)=>`<img src="${u}" alt=""${j?' class="f2"':''}>`).join('')});
+$$('[data-sms]').forEach(a=>a.href='sms:'+C[a.dataset.sms].tel);
 $$('[data-tel]').forEach(a=>a.href='tel:'+C[a.dataset.tel].tel);
 $('#nv').href=C.links.naver;$('#kk').href=C.links.kakao;
 
@@ -14,6 +15,11 @@ $('#nv').href=C.links.naver;$('#kk').href=C.links.kakao;
 let sd=(D.getTime()/6e4|0)%2147483646+1,bx=0,k=0,br='';const rnd=()=>(sd=sd*16807%2147483647)/2147483647;
 while(bx<100){const w=1+(rnd()*3|0);if(k++%2==0)br+=`<rect x="${bx}" width="${w}" height="40"/>`;bx+=w}
 $('#bc').innerHTML=br;
+
+/* 이미지 확대 (탭: 확대/축소, 바깥·× : 닫기) */
+const zm=$('#zm'),zi=$('#zm img'),zc=()=>zm.classList.remove('on','big');
+const zoom=u=>{zi.src=u;zm.classList.remove('big');zm.classList.add('on');zm.scrollTo(0,0)};
+zm.onclick=e=>{if(e.target!==zi||e.target.closest('button'))return zc();zm.classList.toggle('big');if(zm.classList.contains('big'))zm.scrollTo((zm.scrollWidth-zm.clientWidth)/2,(zm.scrollHeight-zm.clientHeight)/2)};
 
 /* 갤러리 + 라이트박스 */
 const gc=['#e8dcc6','#d9c7b0','#efe3d3','#cdb8a0','#e3d5c0','#d4c2ac'];

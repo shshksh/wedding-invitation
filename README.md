@@ -8,9 +8,11 @@ js/config.js        ★ 이름·날짜·장소·링크·계좌·사진 경로 (�
 js/main.js          인터랙션 (수정 불필요)
 images/
   hero.jpg          메인 표지 사진      1080x1920 세로
-  groom.jpg         신랑 프로필         600x800 (3:4)
-  bride.jpg         신부 프로필         600x800 (3:4)
-  map.jpg           약도 이미지         960x420 (생략 가능)
+  groom-1.jpg       신랑 프로필 1       600x800 (3:4)  ┐ 3초 노출 + 1초 페이드로
+  groom-2.jpg       신랑 프로필 2       600x800 (3:4)  ┘ 번갈아 전환
+  bride-1.jpg       신부 프로필 1       600x800 (3:4)
+  bride-2.jpg       신부 프로필 2       600x800 (3:4)
+  map.jpg           약도 이미지         960x420 이상 (탭하면 확대, 생략 가능)
   thumb.jpg         메신저 공유 썸네일  1200x630
   gallery/
     gallery-01.jpg  가로 4:3   (예: 1600x1200)

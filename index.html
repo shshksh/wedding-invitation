@@ -58,9 +58,9 @@
   <h2 class="rv">신랑 · 신부</h2>
   <div class="pair">
     <div class="rv l"><div class="pp"></div><div class="en">Groom</div><h3 data-t="groom.name"></h3><p data-t="groom.fam"></p>
-      <div class="btns"><a class="btn" data-tel="groom">전화</a></div></div>
+      <div class="btns"><a class="btn" data-tel="groom">전화</a><a class="btn" data-sms="groom">문자</a></div></div>
     <div class="rv r"><div class="pp"></div><div class="en">Bride</div><h3 data-t="bride.name"></h3><p data-t="bride.fam"></p>
-      <div class="btns"><a class="btn" data-tel="bride">전화</a></div></div>
+      <div class="btns"><a class="btn" data-tel="bride">전화</a><a class="btn" data-sms="bride">문자</a></div></div>
   </div>
 </section>
 
@@ -92,10 +92,9 @@
   <div class="en rv">Directions</div>
   <h2 class="rv">오시는 길</h2>
   <dl class="way">
-    <dt class="rv">지하철</dt><dd class="rv" style="--d:.1s">5호선(방화행) 발산역 하차<br>7번 출구 도보 2분</dd>
-    <dt class="rv">버스</dt><dd class="rv" style="--d:.2s">노선 및 정류장 안내 추가 예정</dd>
-    <dt class="rv">자가용</dt><dd class="rv" style="--d:.3s">내비게이션에 ‘더 뉴 컨벤션’ 검색</dd>
-    <dt class="rv">주차</dt><dd class="rv" style="--d:.4s">주차 안내 추가 예정</dd>
+    <dt class="rv">지하철</dt><dd class="rv" style="--d:.1s">5호선(방화행) 발산역 하차<br>7번 출구 도보 2분
+      <div class="rt"><small>서울역·공항에서 오시는 경우</small><div class="st"><div><b>서울역</b><em>공항철도</em></div><i>›</i><div><b>김포공항역</b><em>5호선 환승</em></div><i>›</i><div><b>발산역</b><em>7번 출구</em></div></div></div></dd>
+    <dt class="rv">주차</dt><dd class="rv" style="--d:.2s">주차 안내 추가 예정</dd>
   </dl>
 </section>
 
@@ -116,6 +115,7 @@
 
 </main>
 <div id="lb"><div></div><small>좌우를 탭해 넘기고, 가운데를 탭하면 닫혀요</small></div>
+<div id="zm"><button aria-label="닫기">×</button><img alt="지도"></div>
 <div id="toast"></div>
 
 <script src="js/config.js"></script>
